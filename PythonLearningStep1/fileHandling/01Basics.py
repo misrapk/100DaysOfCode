@@ -19,8 +19,21 @@ with open('filename', mode) as var:
 after this the file will automatially close
 '''
 
-with open('example.txt', 'r') as f:
-	# fContents = f.read()
-	# print(fContents)
-	fLines = f.readlines()
-	print(fLines)
+# with open('example.txt', 'r') as f:
+# 	# fContents = f.read()
+# 	# print(fContents)
+# 	for lin in f:
+# 		print(lin, end='')
+# 	# fLines = f.readlines()   #print out all th lines as a list
+# 	# print(fLines)
+
+
+'''reading file'''
+
+with open('example.txt','r') as f:
+	#read the 10 characters at a time
+	sizeTOread= 10
+	fContent = f.read(sizeTOread)
+	while(len(fContent) >0):
+		print(fContent, end ='*')
+		fContent = f.read(sizeTOread)
