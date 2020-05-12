@@ -19,3 +19,5 @@ height = round(height, 3)
 
 print("\nFor a triangle with base {} and height {} the hypoteuse is {}.".format(base, height, hypo))
 print("For a trianlgle with dimenstion base {} and height {} the area is {}.".format(base, height, area))
+
+ 
