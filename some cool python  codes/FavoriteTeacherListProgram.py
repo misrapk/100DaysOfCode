@@ -26,7 +26,7 @@ print("You have total of {} favorite teachers.".format(len(favTeacher)))
 
 #TODO : operations
 print("\nOOPS!!! {} is no longer your first favorite teacher.".format(favTeacher[0]))
-teacher = input("Who is your new FAVORITE teacher: ")
+teacher = input("Who is your new FAVORITE teacher: ").title()
 favTeacher.insert(0,teacher)
 
 #again sort and print
