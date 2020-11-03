@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="E:/100DaysDataScience/Database Sqlite/code3/code3/geodata/geodata.sqlite" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="1"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="371"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,9:mainLocations"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Locations" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="300"/><column index="2" value="300"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE User(
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	name TEXT,
+	email TEXT
+);
+	
+CREATE TABLE Course(
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	title Text
+);
+
+CREATE TABLE Member (
+	user_id INTEGER,
+	course_id INTEGER,
+	role INTEGER,
+	PRIMARY KEY(user_id, course_id)
+	);
+	
+	
+INSERT INTO User(name, email) VALUES ('Rahul', 'rahul@email.com');
+INSERT INTO User(name, email) VALUES ('Megha', 'megha@email.com');
+INSERT INTO User(name, email) VALUES ('Peeyush', 'peeyush@email.com');
+
+INSERT INTO Course(title) VALUES ('Python');
+INSERT INTO Course(title) VALUES ('Database');
+INSERT INTO Course(title) VALUES ('Machine Learning');
+
+INSERT INTO Member(user_id, course_id, role) VALUES (1,1,1);
+INSERT INTO Member(user_id, course_id, role) VALUES (2,1,0);
+INSERT INTO Member(user_id, course_id, role) VALUES (3,1,0);
+INSERT INTO Member(user_id, course_id, role) VALUES (1,2,0);
+INSERT INTO Member(user_id, course_id, role) VALUES (2,2,1);
+INSERT INTO Member(user_id, course_id, role) VALUES (2,3,1);
+
+
+-- queiries
+SELECT User.name, Member.role, Course.title
+FROM User JOIN Member JOIN Course
+ON Member.user_id=User.id AND Member.course_id=Course.id
+ORDER BY Course.title, Member.role DESC, User.name</sql><current_tab id="0"/></tab_sql></sqlb_project>
